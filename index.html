@@ -2,10 +2,475 @@
 <html>
 <head>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=Ziyi%20Zhang%20Site.dc.html">
-<title>Ziyi Zhang</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
 </head>
 <body>
-<a href="Ziyi Zhang Site.dc.html">Ziyi Zhang</a>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&family=ZCOOL+KuaiLe&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #FBF6EC; }
+    image-slot { display: block; width: 100%; height: 100%; }
+    @media (max-width: 760px) {
+      [data-screen-label="Nav"] { padding: 14px 20px !important; flex-wrap: wrap; gap: 10px; }
+      [data-screen-label="Nav"] > div:last-child { gap: 18px !important; font-size: 13px !important; }
+      [data-screen-label="Hero"] { display: flex !important; flex-direction: column !important; align-items: flex-start !important; padding: 40px 24px 56px !important; gap: 44px !important; }
+      #heroName { font-size: 64px !important; }
+      #heroTagline { font-size: 26px !important; }
+      #heroCollage { zoom: 0.72; margin-left: 0 !important; align-self: center; }
+      [data-doodle] { display: none !important; }
+      [data-mobile-hide] { display: none !important; }
+      [data-screen-label="Ticker"] { font-size: 13px !important; gap: 20px !important; }
+      [data-screen-label="Work"], [data-screen-label="Communities"], [data-screen-label="Beyond work"] { padding-left: 24px !important; padding-right: 24px !important; }
+      #communityGrid, #mediaGrid { grid-template-columns: 1fr !important; }
+      [data-screen-label="Media shelf"] { padding-left: 24px !important; padding-right: 24px !important; }
+      [data-screen-label="Beyond work"] { display: flex !important; flex-direction: column !important; align-items: stretch !important; gap: 40px !important; }
+      #hobbyCollage { width: 300px; align-self: center; }
+      #contact > div { padding: 56px 24px 48px !important; }
+      #footerLine { font-size: 38px !important; }
+    }
+    @keyframes tickerScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    @keyframes letterIn {
+      from { opacity: 0; translate: 0 44px; }
+      to { opacity: 1; translate: 0 0; }
+    }
+    @keyframes floaty {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -7px; }
+    }
+    @keyframes spinStar {
+      from { rotate: 0deg; }
+      to { rotate: 360deg; }
+    }
+    @keyframes twinkle {
+      0%, 100% { scale: 1; opacity: 1; }
+      50% { scale: 0.7; opacity: 0.55; }
+    }
+    @keyframes dashFlow {
+      to { stroke-dashoffset: -26; }
+    }
+    @keyframes dashMarch {
+      to { stroke-dashoffset: -14; }
+    }
+    @keyframes bob {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -6px; }
+    }
+    @keyframes nameWave {
+      0%, 100% { translate: 0 0; }
+      30% { translate: 0 -16px; }
+      60% { translate: 0 3px; }
+    }
+    #heroName:hover span { animation: nameWave 0.9s ease-in-out 1 !important; }
+    #heroName:hover span:nth-of-type(2) { animation-delay: 0.07s !important; }
+    #heroName:hover span:nth-of-type(3) { animation-delay: 0.14s !important; }
+    #heroName:hover span:nth-of-type(4) { animation-delay: 0.21s !important; }
+    #heroName:hover span:nth-of-type(5) { animation-delay: 0.28s !important; }
+    #heroName:hover span:nth-of-type(6) { animation-delay: 0.35s !important; }
+    #heroName:hover span:nth-of-type(7) { animation-delay: 0.42s !important; }
+    #heroName:hover span:nth-of-type(8) { animation-delay: 0.49s !important; }
+    #heroName:hover span:nth-of-type(9) { animation-delay: 0.56s !important; }
+    [data-reveal] { opacity: 0; translate: 0 26px; transition: opacity 0.7s ease, translate 0.7s ease; }
+    [data-reveal].revealed { opacity: 1; translate: 0 0; }
+    [data-card] { transition: opacity 0.7s ease, translate 0.7s ease, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease !important; }
+    [data-card]:hover { transform: rotate(0deg) translate(-3px,-5px) scale(1.02) !important; box-shadow: 10px 12px 0 rgba(26,24,21,0.85) !important; }
+    [data-workrow] [data-workdot] { transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    [data-chip] { z-index: 1; }
+    [data-chip]:hover { z-index: 5; }
+    [data-chip-face] { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease; box-shadow: 0 0 0 rgba(26,24,21,0); }
+    [data-chip]:hover [data-chip-face] { transform: rotate(-2.5deg) scale(1.07) translateY(-4px) !important; box-shadow: 4px 7px 0 rgba(26,24,21,0.25); }
+    [data-chip]:nth-of-type(1):hover [data-chip-face] { background: #E6432E !important; color: #FBF6EC !important; border-color: #E6432E !important; }
+    [data-chip]:nth-of-type(2):hover [data-chip-face] { background: #1B9E5E !important; color: #FBF6EC !important; border-color: #1B9E5E !important; }
+    [data-chip]:nth-of-type(3):hover [data-chip-face] { background: #F6A9C4 !important; color: #1A1815 !important; border-color: #F6A9C4 !important; }
+    [data-chip]:nth-of-type(4):hover [data-chip-face] { background: #F5B82E !important; color: #1A1815 !important; border-color: #F5B82E !important; }
+    [data-chip]:nth-of-type(5):hover [data-chip-face] { background: #2E5BE6 !important; color: #FBF6EC !important; border-color: #2E5BE6 !important; }
+    [data-chip].chip-dragging [data-chip-face] { transform: rotate(3deg) scale(1.1) !important; box-shadow: 7px 12px 0 rgba(26,24,21,0.28); }
+    [data-chip].chip-dragging { cursor: grabbing !important; }
+    [data-chip-icon] { width: 0; height: 17px; opacity: 0; margin-right: 0; transition: width 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease, margin-right 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); flex-shrink: 0; }
+    [data-chip]:hover [data-chip-icon] { width: 17px; opacity: 1; margin-right: 8px; }
+    [data-chip-tip] { opacity: 0; translate: -50% 8px; pointer-events: none; transition: opacity 0.25s ease, translate 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    [data-chip]:hover [data-chip-tip], [data-chip].chip-dragging [data-chip-tip] { opacity: 1; translate: -50% 0; }
+    [data-workrow]:hover [data-workdot] { transform: rotate(180deg) scale(1.12); }
+    [data-workrow] a:hover [data-jump], #communityGrid a:hover [data-jump] { opacity: 1 !important; translate: 0 0 !important; }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition-duration: 0.01s !important; }
+      [data-reveal] { opacity: 1; translate: 0 0; }
+    }
+  </style>
+</helmet>
+
+<div style="background: #FBF6EC; color: #1A1815; min-height: 100vh">
+
+  <!-- ============ NAV ============ -->
+  <div data-screen-label="Nav" style="position: sticky; top: 0; z-index: 50; background: #FBF6EC; display: flex; align-items: center; justify-content: space-between; padding: 20px 56px; border-bottom: 1px solid rgba(26,24,21,0.08)">
+    <div style="display: flex; align-items: center; gap: 12px">
+      <div style="width: 15px; height: 15px; border-radius: 50%; background: #E6432E"></div>
+      <div style="width: 15px; height: 15px; background: #2E5BE6"></div>
+      <div style="width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 15px solid #F5B82E"></div>
+      <span style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 16px; letter-spacing: 0.04em">ZIYI ZHANG</span>
+      <span style="position: relative; display: inline-block; font-family: 'ZCOOL KuaiLe', sans-serif; font-size: 16px; color: #E6432E; padding: 2px 6px">章子怡
+        <svg viewBox="0 0 80 34" style="position: absolute; inset: -4px -6px; width: calc(100% + 12px); height: calc(100% + 8px); overflow: visible; pointer-events: none"><ellipse cx="40" cy="17" rx="37" ry="14" fill="none" stroke="#E6432E" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 3" transform="rotate(-3 40 17)" style="animation: dashMarch 1.6s linear infinite"></ellipse></svg>
+      </span>
+    </div>
+    <div style="display: flex; gap: 36px; font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 15px">
+      <a href="#work" style="color: #1A1815; text-decoration: none; border-bottom: 2px solid #E6432E">Work</a>
+      <a href="#communities" style="color: #1A1815; text-decoration: none; border-bottom: 2px solid #2E5BE6">Communities</a>
+      <a href="archive.html" style="color: #1A1815; text-decoration: none; border-bottom: 2px solid #1B9E5E">Blog</a>
+      <a href="#contact" style="color: #1A1815; text-decoration: none; border-bottom: 2px solid #F5B82E">Contact</a>
+    </div>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <div data-screen-label="Hero" style="position: relative; display: grid; grid-template-columns: 1fr 360px; gap: 64px; padding: 64px 56px 80px; max-width: 1180px; margin: 0 auto; box-sizing: border-box; align-items: end">
+    <div style="display: flex; flex-direction: column; gap: 32px">
+      <div id="heroName" style="font-size: 120px; line-height: 1.05; letter-spacing: -0.01em">
+        <span style="display: inline-block; font-family: 'Archivo', sans-serif; font-weight: 900; transform: translateY(-6px) rotate(-3deg); animation: letterIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.05s both" style-hover="transform: translateY(-18px) rotate(-3deg)">Z</span><span style="display: inline-block; font-family: 'Instrument Serif', serif; font-style: italic; color: #E6432E; transform: translateY(6px); animation: letterIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.11s both" style-hover="transform: translateY(-8px)">i</span><span style="display: inline-block; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; transform: translateY(-4px) rotate(2deg); animation: letterIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.17s both" style-hover="transform: translateY(-16px) rotate(2deg)">y</span><span style="display: inline-block; font-family: 'Instrument Serif', serif; font-style: italic; color: #2E5BE6; transform: translateY(8px) rotate(-2deg); animation: letterIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.23s both" style-hover="transform: translateY(-6px) rotate(-2deg)">i</span><br>
+        <span style="display: inline-block; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; transform: translateY(4px) rotate(2deg); animation: letterIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.29s both" style-hover="transform: translateY(-10px) rotate(2deg)">Z</span><span style="display: inline-block; font-family: 'Archivo', sans-serif; font-weight: 900; color: #1B9E5E; transform: translateY(-8px); animation: letterIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s both" style-hover="transform: translateY(-20px)">h</span><span style="display: inline-block; font-family: 'Instrument Serif', serif; font-style: italic; transform: translateY(6px) rotate(-2deg); animation: letterIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.41s both" style-hover="transform: translateY(-8px) rotate(-2deg)">a</span><span style="display: inline-block; font-family: 'Archivo', sans-serif; font-weight: 900; color: #F5B82E; transform: translateY(-4px) rotate(3deg); animation: letterIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.47s both" style-hover="transform: translateY(-16px) rotate(3deg)">n</span><span style="display: inline-block; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; color: #E6432E; transform: translateY(8px); animation: letterIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.53s both" style-hover="transform: translateY(-6px)">g</span>
+      </div>
+      <div id="heroTagline" style="font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 36px; line-height: 1.2; letter-spacing: -0.01em; max-width: 640px">
+        Marketer by <span style="position: relative; display: inline-block; font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: #E6432E">title<svg viewBox="0 0 70 12" style="position: absolute; left: 0; bottom: -12px; width: 100%; height: 12px; overflow: visible; pointer-events: none"><path d="M2 8 Q 12 2, 24 7 T 46 7 T 68 6" fill="none" stroke="#E6432E" stroke-width="2.5" stroke-linecap="round"></path></svg></span>, builder by <span style="position: relative; display: inline-block; font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: #2E5BE6">habit<svg viewBox="0 0 80 12" style="position: absolute; left: 0; bottom: -12px; width: 100%; height: 12px; overflow: visible; pointer-events: none"><path d="M2 7 Q 13 2, 26 7 T 52 7 T 78 6" fill="none" stroke="#2E5BE6" stroke-width="2.5" stroke-linecap="round"></path></svg></span>.
+      </div>
+      <div style="display: flex; align-items: center; gap: 20px">
+        <a href="#work" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; color: #FBF6EC; background: #1A1815; text-decoration: none; padding: 14px 28px; border-radius: 999px" style-hover="background: #E6432E">See my work</a>
+        <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 24px; color: #6B6455; transform: rotate(-2deg)">from Toronto, with love :)</span>
+      </div>
+    </div>
+    <div id="heroCollage" style="position: relative; width: 420px; height: 520px; margin-left: -60px">
+      <div style="position: absolute; top: 10px; right: 24px; width: 64px; height: 64px; border-radius: 50%; background: #F5B82E; animation: floaty 6s ease-in-out 0.6s infinite"></div>
+      <div style="position: absolute; bottom: 48px; left: 6px; width: 44px; height: 44px; background: #2E5BE6; transform: rotate(12deg); animation: floaty 5s ease-in-out 1.8s infinite"></div>
+      <div style="position: absolute; top: 200px; right: 0; width: 0; height: 0; border-left: 26px solid transparent; border-right: 26px solid transparent; border-bottom: 46px solid #1B9E5E; transform: rotate(-14deg); animation: floaty 7s ease-in-out 3s infinite"></div>
+      <div style="position: absolute; top: 30px; left: 30px; width: 260px; height: 330px; background: #FBF6EC; padding: 10px 10px 14px; box-sizing: content-box; border-radius: 140px 140px 8px 8px; box-shadow: 6px 6px 0 rgba(26,24,21,0.85); transform: rotate(-3deg); animation: floaty 6.5s ease-in-out infinite" style-hover="transform: rotate(-1deg)">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="photo-7a" src="uploads/IMG_2581.jpeg" mask="inset(0 round 130px 130px 4px 4px)" placeholder="Portrait" style="width: 100%; height: 100%" hint-size="260px,330px"></x-import>
+      </div>
+      <div style="position: absolute; bottom: 20px; right: 20px; width: 170px; height: 170px; background: #FBF6EC; padding: 9px; box-sizing: content-box; border-radius: 50%; box-shadow: 5px 5px 0 rgba(26,24,21,0.85); transform: rotate(5deg); animation: floaty 5.5s ease-in-out 1.2s infinite" style-hover="transform: rotate(0deg)">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="photo-7a-2" src="uploads/IMG_9865.jpeg" shape="circle" placeholder="Climbing" style="width: 100%; height: 100%" hint-size="170px,170px"></x-import>
+      </div>
+      <div style="position: absolute; top: 0; right: 84px; width: 120px; height: 120px; background: #FBF6EC; padding: 8px; box-sizing: content-box; border-radius: 12px; box-shadow: 4px 4px 0 rgba(26,24,21,0.85); transform: rotate(7deg); animation: floaty 7.5s ease-in-out 2.4s infinite" style-hover="transform: rotate(3deg)">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="photo-7a-3" src="uploads/IMG_3166.jpeg" shape="rounded" radius="8" placeholder="Community" style="width: 100%; height: 100%" hint-size="120px,120px"></x-import>
+      </div>
+      <div style="position: absolute; top: 18px; left: 132px; width: 90px; height: 26px; background: rgba(246,169,196,0.85); transform: rotate(-6deg); border-radius: 2px"></div>
+      <div style="position: absolute; bottom: 172px; right: 6px; width: 74px; height: 22px; background: rgba(157,185,255,0.85); transform: rotate(18deg); border-radius: 2px"></div>
+    </div>
+    <sc-if value="{{ showDoodles }}" hint-placeholder-val="{{ true }}">
+      <div data-doodle="true" style="position: absolute; right: 455px; top: 104px; display: flex; flex-direction: column; align-items: flex-end; pointer-events: none">
+        <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 27px; color: #1A1815; transform: rotate(-7deg)">that's me!</span>
+        <svg viewBox="0 0 130 70" style="width: 130px; height: 70px; overflow: visible; margin-top: -2px; margin-right: -70px"><path d="M6 8 C 40 30, 60 20, 100 44" fill="none" stroke="#1A1815" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="7 6" style="animation: dashFlow 1.3s linear infinite"></path><path d="M88 44 L 102 46 L 94 33" fill="none" stroke="#1A1815" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </div>
+      <svg data-doodle="true" viewBox="0 0 36 36" style="position: absolute; left: 600px; top: 74px; width: 36px; height: 36px; overflow: visible; pointer-events: none; transform: rotate(12deg); animation: spinStar 14s linear infinite"><path d="M18 2 L 21 15 L 34 18 L 21 21 L 18 34 L 15 21 L 2 18 L 15 15 Z" fill="#F5B82E"></path></svg>
+      <svg data-doodle="true" viewBox="0 0 20 20" style="position: absolute; left: 646px; top: 112px; width: 18px; height: 18px; overflow: visible; pointer-events: none; animation: twinkle 2.4s ease-in-out infinite"><path d="M10 1 L 12 8 L 19 10 L 12 12 L 10 19 L 8 12 L 1 10 L 8 8 Z" fill="#2E5BE6"></path></svg>
+      <svg data-doodle="true" viewBox="0 0 36 36" style="position: absolute; right: 30px; bottom: 226px; width: 24px; height: 24px; overflow: visible; pointer-events: none; transform: rotate(18deg); animation: spinStar 18s linear infinite reverse"><path d="M18 2 L 21 15 L 34 18 L 21 21 L 18 34 L 15 21 L 2 18 L 15 15 Z" fill="#1B9E5E"></path></svg>
+    </sc-if>
+  </div>
+
+  <!-- ============ TICKER ============ -->
+  <div data-screen-label="Ticker" style="background: #1A1815; color: #FBF6EC; padding: 14px 0; font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; overflow: hidden">
+    <div id="tickerTrack" style="display: flex; gap: 40px; width: max-content; animation: tickerScroll 22s linear infinite">
+      <span>Product marketing</span><span style="color: #F5B82E">✳</span>
+      <span>Community</span><span style="color: #E6432E">✳</span>
+      <span>Climbing</span><span style="color: #2E5BE6">✳</span>
+      <span>Side projects</span><span style="color: #1B9E5E">✳</span>
+      <span>Product marketing</span><span style="color: #F5B82E">✳</span>
+      <span>Community</span><span style="color: #E6432E">✳</span>
+      <span>Climbing</span><span style="color: #2E5BE6">✳</span>
+      <span>Side projects</span><span style="color: #1B9E5E">✳</span>
+    </div>
+  </div>
+
+  <!-- ============ WORK ============ -->
+  <div id="work" data-screen-label="Work" style="max-width: 1180px; margin: 0 auto; padding: 88px 56px 40px; box-sizing: border-box; display: flex; flex-direction: column">
+    <div data-reveal="true" style="display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 28px">
+      <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; letter-spacing: -0.01em; white-space: nowrap">I build stuff</span>
+      <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 24px; color: #6B6455; transform: rotate(-3deg)">the 9-to-5 &amp; the 5-to-9 ↓</span>
+    </div>
+    <div data-workrow="true" data-reveal="true" style="display: flex; align-items: center; gap: 24px; padding: 26px 0; border-top: 2px solid #1A1815" style-hover="padding-left: 14px">
+      <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; color: #16DB5A">01</span>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 6px">
+        <a href="https://pitapat.ca/" target="_blank" style="display: flex; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 27px; color: inherit; text-decoration: none; cursor: pointer; align-self: flex-start">PIT-A-PAT<span data-jump="true" style="font-size: 22px; color: #16DB5A; opacity: 0; transition: opacity 0.25s ease, translate 0.25s ease; translate: -4px 4px">↗</span></a>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 16px; color: #6B6455">Rugs by independent Chinese designers. We license the art, work with factories, and ship it to your floor. I run paid ads on Meta and Google, and grew our IG and TikTok to 1.5k+ followers and counting. Also the part-time rug model. <span onClick="{{ openPitapatIg }}" style="position: relative; display: inline-block; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 18px; color: #16DB5A; cursor: pointer">follow us on IG<svg viewBox="0 0 110 12" style="position: absolute; left: 0; bottom: -8px; width: 100%; height: 10px; overflow: visible; pointer-events: none"><path d="M2 7 Q 14 2, 28 7 T 54 7 T 80 7 T 106 6" fill="none" stroke="#16DB5A" stroke-width="2" stroke-linecap="round"></path></svg></span></span>
+      </div>
+      <span data-mobile-hide="true" style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: #6B6455">Dec 2023 – present</span>
+      <img data-workdot="true" src="uploads/Green-2.png" alt="pitapat logo" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover">
+    </div>
+    <div data-workrow="true" data-reveal="true" style="display: flex; align-items: center; gap: 24px; padding: 26px 0; border-top: 2px solid #1A1815; transition-delay: 0.1s" style-hover="padding-left: 14px">
+      <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; color: #2E5BE6">02</span>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 6px">
+        <a href="https://focusml-275385953537.us-east1.run.app" target="_blank" style="display: flex; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 27px; color: inherit; text-decoration: none; cursor: pointer; align-self: flex-start">FocusML<span data-jump="true" style="font-size: 22px; color: #2E5BE6; opacity: 0; transition: opacity 0.25s ease, translate 0.25s ease; translate: -4px 4px">↗</span></a>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 16px; color: #6B6455">Built at a Google Developer Group x AIRESS hackathon. Helps ADHD brains actually start on the learning piling up in their bookmarks by recognizing the mental hurdles in the way, and clearing them one tiny step at a time. <span onClick="{{ openFocusDemo }}" style="position: relative; display: inline-block; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 18px; color: #2E5BE6; cursor: pointer">watch the demo<svg viewBox="0 0 110 12" style="position: absolute; left: 0; bottom: -8px; width: 100%; height: 10px; overflow: visible; pointer-events: none"><path d="M2 7 Q 14 2, 28 7 T 54 7 T 80 7 T 106 6" fill="none" stroke="#2E5BE6" stroke-width="2" stroke-linecap="round"></path></svg></span></span>
+      </div>
+      <span data-mobile-hide="true" style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: #6B6455">Hackathon build · live</span>
+      <svg data-workdot="true" viewBox="0 0 44 44" style="width: 44px; height: 44px"><circle cx="22" cy="22" r="22" fill="#2E5BE6"></circle><path d="M17.5 13.8 C 18.2 12.6, 19.6 12.4, 20.8 13.1 L 30.6 19.2 C 32.4 20.3, 32.5 22.9, 30.8 24.1 L 21.2 30.7 C 19.6 31.8, 17.4 31, 17 29.1 C 16.3 25.6, 16 22.5, 16.2 19.5 C 16.3 17.4, 16.8 15.2, 17.5 13.8 Z" fill="#1A1815"></path></svg>
+    </div>
+    <div data-workrow="true" data-reveal="true" style="display: flex; align-items: center; gap: 24px; padding: 26px 0; border-top: 2px solid #1A1815; border-bottom: 2px solid #1A1815; transition-delay: 0.2s" style-hover="padding-left: 14px">
+      <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; color: #F5B82E">03</span>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 6px">
+        <a href="https://topic-suggestion-board.vercel.app/" target="_blank" style="display: flex; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 27px; color: inherit; text-decoration: none; cursor: pointer; align-self: flex-start">Topic Suggestion Board<span data-jump="true" style="font-size: 22px; color: #F5B82E; opacity: 0; transition: opacity 0.25s ease, translate 0.25s ease; translate: -4px 4px">↗</span></a>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 16px; color: #6B6455">A topic board I built for the women-in-tech mental health community I ran, so members could pitch and vote on what we talk about next.</span>
+      </div>
+      <span data-mobile-hide="true" style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; color: #6B6455">Side build · live</span>
+      <svg data-workdot="true" viewBox="0 0 44 44" style="width: 44px; height: 44px"><circle cx="22" cy="22" r="22" fill="#F5B82E"></circle><path d="M22.5 12 C 28 12, 31.8 15.8, 31.5 20.5 C 31.2 25, 27.5 28, 22.8 28.2 L 19.5 28.3 L 14.8 32.5 C 14.2 33, 13.4 32.6, 13.6 31.8 L 14.6 27.2 C 13 25.6, 12.2 23.4, 12.4 20.8 C 12.8 15.8, 17 12, 22.5 12 Z" fill="#1A1815"></path></svg>
+    </div>
+  </div>
+
+  <!-- ============ COMMUNITIES ============ -->
+  <div id="communities" data-screen-label="Communities" style="max-width: 1180px; margin: 0 auto; padding: 72px 56px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px">
+    <div data-reveal="true" style="display: flex; align-items: baseline; justify-content: space-between">
+      <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; letter-spacing: -0.01em; white-space: nowrap">I gather people</span>
+      <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 24px; color: #6B6455; transform: rotate(2deg)">come say hi!</span>
+    </div>
+    <div id="communityGrid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px">
+      <div data-reveal="true" data-card="true" style="background: #FBF6EC; border: 2px solid #1A1815; border-radius: 20px; box-shadow: 5px 5px 0 rgba(26,24,21,0.85); padding: 28px; display: flex; flex-direction: column; gap: 12px; transform: rotate(-0.5deg)" style-hover="transform: rotate(0deg) translate(-3px,-5px) scale(1.02); box-shadow: 10px 12px 0 rgba(26,24,21,0.85)">
+        <img src="uploads/gps-logo-badge.png" alt="Gal Pal Society logo" style="width: 68px; height: 68px; margin: -8px 0 -4px -6px; border-radius: 50%; object-fit: cover">
+        <a href="https://www.instagram.com/g.p.s_galpalsociety/" target="_blank" style="display: flex; align-items: center; gap: 8px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px; color: inherit; text-decoration: none; align-self: flex-start">Gal Pal Society<span data-jump="true" style="font-size: 18px; color: #E6432E; opacity: 0; transition: opacity 0.25s ease, translate 0.25s ease; translate: -4px 4px">↗</span></a>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; line-height: 1.5; color: #454036">A community fostering empowerment, visibility, and belonging for Chinese-speaking queer women. I run the website and social outreach.</span>
+        <span style="align-self: flex-start; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; border: 2px solid #1A1815; border-radius: 999px; padding: 4px 12px">Web &amp; Outreach</span>
+      </div>
+      <div data-reveal="true" data-card="true" style="background: #FBF6EC; border: 2px solid #1A1815; border-radius: 20px; box-shadow: 5px 5px 0 rgba(26,24,21,0.85); padding: 28px; display: flex; flex-direction: column; gap: 12px; transform: rotate(0.6deg); transition-delay: 0.12s" style-hover="transform: rotate(0deg) translate(-3px,-5px) scale(1.02); box-shadow: 10px 12px 0 rgba(26,24,21,0.85)">
+        <div style="width: 44px; height: 44px; background: #2E5BE6"></div>
+        <a href="https://www.instagram.com/p/DYFxERbMxG3/" target="_blank" style="display: flex; align-items: center; gap: 8px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px; color: inherit; text-decoration: none; align-self: flex-start">Women Building the Future<span data-jump="true" style="font-size: 18px; color: #2E5BE6; opacity: 0; transition: opacity 0.25s ease, translate 0.25s ease; translate: -4px 4px">↗</span></a>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; line-height: 1.5; color: #454036">A salon in Toronto for women and nonbinary folks in tech, AI, and startups, with founder demos and builder spotlights. I co-hosted, organized, and spoke.</span>
+        <span style="align-self: flex-start; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; border: 2px solid #1A1815; border-radius: 999px; padding: 4px 12px">Organizer &amp; Speaker</span>
+      </div>
+      <div data-reveal="true" data-card="true" style="background: #FBF6EC; border: 2px solid #1A1815; border-radius: 20px; box-shadow: 5px 5px 0 rgba(26,24,21,0.85); padding: 28px; display: flex; flex-direction: column; gap: 12px; transform: rotate(-0.4deg); transition-delay: 0.24s" style-hover="transform: rotate(0deg) translate(-3px,-5px) scale(1.02); box-shadow: 10px 12px 0 rgba(26,24,21,0.85)">
+        <div style="width: 0; height: 0; border-left: 22px solid transparent; border-right: 22px solid transparent; border-bottom: 40px solid #F5B82E"></div>
+        <a href="https://irislens.live/" target="_blank" style="display: flex; align-items: center; gap: 8px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 22px; color: inherit; text-decoration: none; align-self: flex-start">Iris Lens Podcast<span data-jump="true" style="font-size: 18px; color: #F5B82E; opacity: 0; transition: opacity 0.25s ease, translate 0.25s ease; translate: -4px 4px">↗</span></a>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 15px; line-height: 1.5; color: #454036">A podcast on practical AI upskilling, sharing the workflows founders and CEOs actually use to build with AI. I helped with event organization, internal workflows, and outreach.</span>
+        <span style="align-self: flex-start; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; border: 2px solid #1A1815; border-radius: 999px; padding: 4px 12px">Ops &amp; Outreach</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ BEYOND WORK ============ -->
+  <div data-screen-label="Beyond work" style="max-width: 1180px; margin: 0 auto; padding: 72px 56px 88px; box-sizing: border-box; display: grid; grid-template-columns: 1fr 340px; gap: 56px; align-items: center">
+    <div style="display: flex; flex-direction: column; gap: 28px">
+    <span data-reveal="true" style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; letter-spacing: -0.01em">Beyond the job title</span>
+    <div data-reveal="true" style="display: flex; gap: 12px; flex-wrap: wrap; font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 15px; transition-delay: 0.12s">
+      <span data-chip="true" data-chip-link="https://www.instagram.com/babosclimb/" style="position: relative; display: inline-block; touch-action: none; cursor: grab; user-select: none">
+        <span data-chip-face="true" style="display: inline-flex; align-items: center; border: 2px solid #1A1815; padding: 9px 18px; border-radius: 999px; transform: rotate(-1deg); background: #FBF6EC" style-hover="background: #E6432E; color: #FBF6EC; border-color: #E6432E"><svg data-chip-icon="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20 L10 6 L14 13 L17 9 L21 20 Z"></path><circle cx="17" cy="4" r="1.6"></circle></svg>rock climbing</span>
+        <span data-chip-tip="true" style="position: absolute; bottom: calc(100% + 10px); left: 50%; background: #1A1815; color: #FBF6EC; font-size: 13px; padding: 6px 12px; border-radius: 10px; white-space: nowrap; transform: rotate(-2deg)">chasing my first V4, see @babosclimb</span>
+      </span>
+      <span data-chip="true" style="position: relative; display: inline-block; touch-action: none; cursor: grab; user-select: none">
+        <span data-chip-face="true" style="display: inline-flex; align-items: center; border: 2px solid #1A1815; padding: 9px 18px; border-radius: 999px; transform: rotate(-1deg); background: #FBF6EC" style-hover="background: #1B9E5E; color: #FBF6EC; border-color: #1B9E5E"><svg data-chip-icon="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 8.5 L15.3 11 L14 14.8 L10 14.8 L8.7 11 Z"></path><path d="M12 8.5 L12 3.2 M15.3 11 L20.6 9.6 M14 14.8 L17 19.2 M10 14.8 L7 19.2 M8.7 11 L3.4 9.6"></path></svg>soccer</span>
+        <span data-chip-tip="true" style="position: absolute; bottom: calc(100% + 10px); left: 50%; background: #1A1815; color: #FBF6EC; font-size: 13px; padding: 6px 12px; border-radius: 10px; white-space: nowrap; transform: rotate(2deg)">I'm a midfielder</span>
+      </span>
+      <span data-chip="true" style="position: relative; display: inline-block; touch-action: none; cursor: grab; user-select: none">
+        <span data-chip-face="true" style="display: inline-flex; align-items: center; border: 2px solid #1A1815; padding: 9px 18px; border-radius: 999px; transform: rotate(-1deg); background: #FBF6EC" style-hover="background: #F6A9C4; border-color: #F6A9C4"><svg data-chip-icon="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2.5"></rect><circle cx="12" cy="13.5" r="3.5"></circle><path d="M8 7 L9.5 4 L14.5 4 L16 7"></path></svg>modeling</span>
+        <span data-chip-tip="true" style="position: absolute; bottom: calc(100% + 10px); left: 50%; background: #1A1815; color: #FBF6EC; font-size: 13px; padding: 6px 12px; border-radius: 10px; white-space: nowrap; transform: rotate(2deg)">yes, in front of the camera</span>
+      </span>
+      <span data-chip="true" style="position: relative; display: inline-block; touch-action: none; cursor: grab; user-select: none">
+        <span data-chip-face="true" style="display: inline-flex; align-items: center; border: 2px solid #1A1815; padding: 9px 18px; border-radius: 999px; transform: rotate(1.5deg); background: #FBF6EC" style-hover="background: #E6432E; color: #FBF6EC; border-color: #E6432E"><svg data-chip-icon="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12 L22 12"></path><rect x="4" y="7" width="3" height="10" rx="1"></rect><rect x="17" y="7" width="3" height="10" rx="1"></rect><rect x="8" y="9" width="2" height="6" rx="0.8"></rect><rect x="14" y="9" width="2" height="6" rx="0.8"></rect></svg>weightlifting</span>
+        <span data-chip-tip="true" style="position: absolute; bottom: calc(100% + 10px); left: 50%; background: #1A1815; color: #FBF6EC; font-size: 13px; padding: 6px 12px; border-radius: 10px; white-space: nowrap; transform: rotate(-2deg)">I absolutely love leg days</span>
+      </span>
+      <span data-chip="true" style="position: relative; display: inline-block; touch-action: none; cursor: grab; user-select: none">
+        <span data-chip-face="true" style="display: inline-flex; align-items: center; border: 2px solid #1A1815; padding: 9px 18px; border-radius: 999px; transform: rotate(-1.5deg); background: #FBF6EC"><svg data-chip-icon="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7 L17 7 C 20 7, 22 9.5, 22 12.5 C 22 15.5, 20 17.5, 17.5 17 L 15 16.5 L 9 16.5 L 6.5 17 C 4 17.5, 2 15.5, 2 12.5 C 2 9.5, 4 7, 7 7 Z"></path><path d="M8 10.5 L8 13.5 M6.5 12 L9.5 12"></path><circle cx="16" cy="11" r="0.6"></circle><circle cx="18" cy="13" r="0.6"></circle></svg>video games</span>
+        <span data-chip-tip="true" style="position: absolute; bottom: calc(100% + 10px); left: 50%; background: #1A1815; color: #FBF6EC; font-size: 13px; padding: 6px 12px; border-radius: 10px; white-space: nowrap; transform: rotate(2deg)">splatoon 3 is goated</span>
+      </span>
+    </div>
+    <div data-reveal="true" style="font-family: 'Space Grotesk', sans-serif; font-size: 18px; line-height: 1.6; max-width: 620px; color: #454036; transition-delay: 0.24s">
+      I believe the best marketers are interesting humans first. So tell me what you're building, what you're climbing, or what you're obsessed with lately. I genuinely can't wait to hear about it!
+    </div>
+    </div>
+    <div data-reveal="true" id="hobbyCollage" style="position: relative; height: 320px; transition-delay: 0.2s">
+      <div style="position: absolute; top: 24px; left: 10px; right: 10px; background: #FFFDF5; border: 2px solid #1A1815; box-shadow: 6px 6px 0 rgba(26,24,21,0.85); transform: rotate(-2.5deg); padding: 30px 26px 24px; display: flex; flex-direction: column; gap: 10px; animation: floaty 7s ease-in-out 1s infinite">
+        <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 26px; color: #1A1815">currently:</span>
+        <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 22px; color: #454036; border-bottom: 1.5px dashed rgba(26,24,21,0.25); padding-bottom: 6px">→ chasing my first <span style="color: #E6432E">V4</span></span>
+        <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 22px; color: #454036; border-bottom: 1.5px dashed rgba(26,24,21,0.25); padding-bottom: 6px">→ next rug drop loading…</span>
+        <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 22px; color: #454036; border-bottom: 1.5px dashed rgba(26,24,21,0.25); padding-bottom: 6px">→ learning french</span>
+        <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 22px; color: #454036">→ saying yes to <span style="color: #2E5BE6">coffee chats</span></span>
+      </div>
+      <div style="position: absolute; top: 8px; left: 50%; width: 90px; height: 26px; background: rgba(245,184,46,0.85); transform: translateX(-50%) rotate(-4deg); border-radius: 2px"></div>
+      <svg viewBox="0 0 36 36" style="position: absolute; right: 2px; bottom: 6px; width: 26px; height: 26px; overflow: visible; transform: rotate(14deg)"><path d="M18 3 L21 14 L32 11 L23 18 L30 27 L19 22 L16 33 L14 21 L4 24 L12 16 L6 7 L15 13 Z" fill="#F6A9C4"></path></svg>
+    </div>
+  </div>
+
+  <!-- ============ MEDIA SHELF ============ -->
+  <div data-screen-label="Media shelf" style="max-width: 1180px; margin: 0 auto; padding: 0 56px 88px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px">
+    <div data-reveal="true" style="display: flex; align-items: baseline; justify-content: space-between">
+      <span data-reveal="true" style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; letter-spacing: -0.01em; white-space: nowrap">Off the shelf</span>
+      <a href="archive.html" style="position: relative; display: inline-block; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; color: #1A1815; text-decoration: none" style-hover="color: #E6432E">view the full archive →<svg viewBox="0 0 110 12" style="position: absolute; left: 0; bottom: -8px; width: 100%; height: 10px; overflow: visible; pointer-events: none"><path d="M2 7 Q 14 2, 28 7 T 54 7 T 80 7 T 106 6" fill="none" stroke="#1A1815" stroke-width="2" stroke-linecap="round"></path></svg></a>
+    </div>
+    <div id="mediaGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px">
+      <div data-reveal="true" data-card="true" style="background: #FBF6EC; border: 2px solid #1A1815; border-radius: 20px; box-shadow: 5px 5px 0 rgba(26,24,21,0.85); padding: 24px; display: flex; flex-direction: column; gap: 10px; transform: rotate(-0.6deg)" style-hover="transform: rotate(0deg) translate(-3px,-5px) scale(1.02); box-shadow: 10px 12px 0 rgba(26,24,21,0.85)">
+        <span style="align-self: flex-start; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; background: #E6432E; color: #FBF6EC; border-radius: 999px; padding: 4px 12px">Book</span>
+        <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px">Atmosphere</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; line-height: 1.5; color: #454036">The spaceflight storyline completely got me. Love in orbit, literally.</span>
+        <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 20px; color: #E6432E">★★★★☆</span>
+      </div>
+      <div data-reveal="true" data-card="true" style="background: #FBF6EC; border: 2px solid #1A1815; border-radius: 20px; box-shadow: 5px 5px 0 rgba(26,24,21,0.85); padding: 24px; display: flex; flex-direction: column; gap: 10px; transform: rotate(0.5deg); transition-delay: 0.1s" style-hover="transform: rotate(0deg) translate(-3px,-5px) scale(1.02); box-shadow: 10px 12px 0 rgba(26,24,21,0.85)">
+        <span style="align-self: flex-start; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; background: #2E5BE6; color: #FBF6EC; border-radius: 999px; padding: 4px 12px">Film</span>
+        <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px">Toy Story 5</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; line-height: 1.5; color: #454036">I feel you so much, Bonnie.</span>
+        <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 20px; color: #2E5BE6">★★★★☆</span>
+      </div>
+      <div data-reveal="true" data-card="true" style="background: #FBF6EC; border: 2px solid #1A1815; border-radius: 20px; box-shadow: 5px 5px 0 rgba(26,24,21,0.85); padding: 24px; display: flex; flex-direction: column; gap: 10px; transform: rotate(-0.4deg); transition-delay: 0.2s" style-hover="transform: rotate(0deg) translate(-3px,-5px) scale(1.02); box-shadow: 10px 12px 0 rgba(26,24,21,0.85)">
+        <span style="align-self: flex-start; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; background: #1B9E5E; color: #FBF6EC; border-radius: 999px; padding: 4px 12px">Game</span>
+        <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px">God of War Ragnarök</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; line-height: 1.5; color: #454036">The first one set the bar sky-high, but the combat is still tier 0.</span>
+        <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 20px; color: #1B9E5E">★★★★☆</span>
+      </div>
+      <div data-reveal="true" data-card="true" style="background: #FBF6EC; border: 2px solid #1A1815; border-radius: 20px; box-shadow: 5px 5px 0 rgba(26,24,21,0.85); padding: 24px; display: flex; flex-direction: column; gap: 10px; transform: rotate(0.6deg); transition-delay: 0.3s" style-hover="transform: rotate(0deg) translate(-3px,-5px) scale(1.02); box-shadow: 10px 12px 0 rgba(26,24,21,0.85)">
+        <span style="align-self: flex-start; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; background: #F5B82E; color: #1A1815; border-radius: 999px; padding: 4px 12px">Album</span>
+        <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px">在雨後醒來 — Asen</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; line-height: 1.5; color: #454036">Same province, both small-town kids. Chinese hip-hop keeps leveling up.</span>
+        <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 20px; color: #C7930F">★★★★★</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <div id="contact" data-screen-label="Footer" style="background: #1A1815; color: #FBF6EC">
+    <div style="max-width: 1180px; margin: 0 auto; padding: 80px 56px 64px; box-sizing: border-box; display: flex; flex-direction: column; gap: 36px">
+      <div id="footerLine" data-reveal="true" style="position: relative; font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 60px; letter-spacing: -0.02em; max-width: 800px">
+        Let's make something <span style="font-family: 'Instrument Serif', serif; font-style: italic; color: #F5B82E; white-space: nowrap; display: inline-block">fu<span style="display: inline-block; animation: bob 2.4s ease-in-out infinite">n</span><span style="display: inline-block; opacity: 0.92; font-size: 0.95em; transform: translateY(-2px); animation: bob 2.4s ease-in-out 0.09s infinite">n</span><span style="display: inline-block; opacity: 0.84; font-size: 0.9em; transform: translateY(2px); animation: bob 2.4s ease-in-out 0.18s infinite">n</span><span style="display: inline-block; opacity: 0.74; font-size: 0.85em; transform: translateY(-3px); animation: bob 2.4s ease-in-out 0.27s infinite">n</span><span style="display: inline-block; opacity: 0.64; font-size: 0.8em; transform: translateY(3px); animation: bob 2.4s ease-in-out 0.36s infinite">n</span><span style="display: inline-block; opacity: 0.54; font-size: 0.75em; transform: translateY(-2px); animation: bob 2.4s ease-in-out 0.45s infinite">n</span><span style="display: inline-block; opacity: 0.44; font-size: 0.7em; transform: translateY(2px); animation: bob 2.4s ease-in-out 0.54s infinite">n</span><span style="display: inline-block; opacity: 0.34; font-size: 0.65em; transform: translateY(-3px); animation: bob 2.4s ease-in-out 0.63s infinite">n</span><span style="display: inline-block; opacity: 0.25; font-size: 0.6em; transform: translateY(2px); animation: bob 2.4s ease-in-out 0.72s infinite">n</span><span style="display: inline-block; opacity: 0.17; font-size: 0.55em; transform: translateY(-2px); animation: bob 2.4s ease-in-out 0.81s infinite">n</span><span style="display: inline-block; opacity: 0.1; font-size: 0.5em; transform: translateY(1px); animation: bob 2.4s ease-in-out 0.9s infinite">n</span> <span style="display: inline-block; font-size: 0.55em; transform: rotate(-6deg) translateY(-4px); margin-left: 6px">&lt;3</span></span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap">
+        <a href="mailto:zoey42zhang@gmail.com" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; color: #1A1815; background: #F5B82E; text-decoration: none; padding: 14px 28px; border-radius: 999px" style-hover="background: #FBF6EC">Email me <svg viewBox="0 0 24 18" style="display: inline-block; width: 19px; height: 15px; margin-left: 6px; vertical-align: -1px; overflow: visible; transform: rotate(-4deg)" style-hover="transform: rotate(8deg) translateY(-2px)"><rect x="1.5" y="1.5" width="21" height="15" rx="3" fill="#FBF6EC" stroke="#1A1815" stroke-width="2"></rect><path d="M2.5 3.5 L 12 10.5 L 21.5 3.5" fill="none" stroke="#1A1815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        <a href="#contact" style="font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 15px; color: #FBF6EC; text-decoration: none; border: 2px solid rgba(251,246,236,0.4); border-radius: 999px; padding: 9px 18px" style-hover="border-color: #FBF6EC">LinkedIn</a>
+        <a href="#contact" style="font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 15px; color: #FBF6EC; text-decoration: none; border: 2px solid rgba(251,246,236,0.4); border-radius: 999px; padding: 9px 18px" style-hover="border-color: #FBF6EC">GitHub</a>
+        <a href="#contact" style="font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 15px; color: #FBF6EC; text-decoration: none; border: 2px solid rgba(251,246,236,0.4); border-radius: 999px; padding: 9px 18px" style-hover="border-color: #FBF6EC">Instagram</a>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(251,246,236,0.2); padding-top: 24px; font-family: 'Space Grotesk', sans-serif; font-size: 14px; color: rgba(251,246,236,0.6)">
+        <div style="display: flex; align-items: center; gap: 10px">
+          <div style="width: 12px; height: 12px; border-radius: 50%; background: #E6432E"></div>
+          <div style="width: 12px; height: 12px; background: #2E5BE6"></div>
+          <div style="width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 12px solid #F5B82E"></div>
+          <span>Ziyi Zhang · 章子怡</span>
+        </div>
+        <span>Toronto · 2026</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;showDoodles&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot; }
+}">
+class Component extends DCLogic {
+  componentDidMount() {
+    this.setupTicker();
+    this.setupChips();
+    const reveal = (el) => el.classList.add('revealed');
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          reveal(e.target);
+          this._io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('[data-reveal]').forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        reveal(el);
+      } else {
+        this._io.observe(el);
+      }
+    });
+  }
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._tickerResize) window.removeEventListener('resize', this._tickerResize);
+    if (this._chipRafs) this._chipRafs.forEach((id) => cancelAnimationFrame(id));
+  }
+  setupTicker() {
+    const track = document.getElementById('tickerTrack');
+    if (!track || track.dataset.tickerInit) return;
+    track.dataset.tickerInit = '1';
+    const half = Array.from(track.children).slice(0, track.children.length / 2);
+    const fill = () => {
+      let guard = 0;
+      // content shifts by -50%; the first half must be at least as wide as the screen
+      while (track.scrollWidth < window.innerWidth * 2 + 200 && guard < 30) {
+        half.forEach((n) => track.appendChild(n.cloneNode(true)));
+        half.forEach((n) => track.appendChild(n.cloneNode(true)));
+        guard++;
+      }
+    };
+    fill();
+    this._tickerResize = fill;
+    window.addEventListener('resize', fill);
+  }
+  setupChips() {
+    this._chipRafs = [];
+    document.querySelectorAll('[data-chip]').forEach((chip) => {
+      if (chip.dataset.chipInit) return;
+      chip.dataset.chipInit = '1';
+      let x = 0, y = 0, vx = 0, vy = 0;
+      let dragging = false, lastX = 0, lastY = 0, lastT = 0, raf = 0;
+      const apply = () => { chip.style.transform = 'translate(' + x + 'px,' + y + 'px)'; };
+      const inertia = () => {
+        vx *= 0.94; vy *= 0.94;
+        x += vx; y += vy;
+        // soft pull back toward home so chips never get lost
+        x += (0 - x) * 0.015; y += (0 - y) * 0.015;
+        apply();
+        if (Math.abs(vx) > 0.05 || Math.abs(vy) > 0.05 || Math.abs(x) > 0.5 || Math.abs(y) > 0.5) {
+          raf = requestAnimationFrame(inertia);
+          this._chipRafs.push(raf);
+        } else {
+          x = 0; y = 0; apply();
+        }
+      };
+      let downX = 0, downY = 0, moved = 0;
+      chip.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        chip.classList.add('chip-dragging');
+        chip.setPointerCapture(e.pointerId);
+        cancelAnimationFrame(raf);
+        lastX = e.clientX; lastY = e.clientY; lastT = performance.now();
+        downX = e.clientX; downY = e.clientY; moved = 0;
+        vx = 0; vy = 0;
+        e.preventDefault();
+      });
+      chip.addEventListener('pointerup', (e) => {
+        moved = Math.hypot(e.clientX - downX, e.clientY - downY);
+        if (moved < 6 && chip.dataset.chipLink) {
+          window.open(chip.dataset.chipLink, '_blank');
+        }
+      });
+      chip.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        const now = performance.now();
+        const dt = Math.max(now - lastT, 1);
+        const dx = e.clientX - lastX, dy = e.clientY - lastY;
+        x += dx; y += dy;
+        vx = dx / dt * 16; vy = dy / dt * 16;
+        lastX = e.clientX; lastY = e.clientY; lastT = now;
+        apply();
+      });
+      const release = () => {
+        if (!dragging) return;
+        dragging = false;
+        chip.classList.remove('chip-dragging');
+        raf = requestAnimationFrame(inertia);
+        this._chipRafs.push(raf);
+      };
+      chip.addEventListener('pointerup', release);
+      chip.addEventListener('pointercancel', release);
+    });
+  }
+  renderVals() {
+    return {
+      openPitapatIg: (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        window.open('https://www.instagram.com/pitapat.home/', '_blank');
+      },
+      openFocusDemo: (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        window.open('https://drive.google.com/drive/folders/1WOCSzaYBsqLCFytVEcUs9xFANaftu1CM', '_blank');
+      },
+      showDoodles: this.props.showDoodles ?? true,
+    };
+  }
+}
+</script>
 </body>
 </html>

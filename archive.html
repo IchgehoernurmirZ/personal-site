@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #FBF6EC; color: #1A1815; -webkit-font-smoothing: antialiased; }
+    a { color: #1A1815; }
+    a:hover { color: #E6432E; }
+    [data-reveal] { opacity: 0; translate: 0 26px; transition: opacity 0.7s ease, translate 0.7s ease; }
+    [data-reveal].revealed { opacity: 1; translate: 0 0; }
+    @media (max-width: 720px) {
+      [data-screen-label="Archive"] { padding: 40px 24px 64px !important; }
+      [data-archiverow] { flex-wrap: wrap; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition-duration: 0.01s !important; }
+      [data-reveal] { opacity: 1; translate: 0 0; }
+    }
+  </style>
+</helmet>
+
+<div data-screen-label="Archive" style="background: #FBF6EC; color: #1A1815; min-height: 100vh; max-width: 1180px; margin: 0 auto; padding: 48px 56px 88px; box-sizing: border-box; display: flex; flex-direction: column; gap: 40px">
+  <a href="index.html" style="align-self: flex-start; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; color: #1A1815; text-decoration: none" style-hover="color: #E6432E">← back home</a>
+
+  <div style="display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px">
+    <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 56px; letter-spacing: -0.01em">The archive</span>
+    <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 24px; color: #6B6455; transform: rotate(-2deg)">everything I've read, watched, played &amp; looped</span>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 16px">
+    <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; color: #6B6455">2026</span>
+
+    <div data-archiverow="true" data-reveal="true" style="display: flex; align-items: center; gap: 20px; padding: 20px 0; border-top: 2px solid #1A1815">
+      <span style="flex-shrink: 0; width: 76px; text-align: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; background: #E6432E; color: #FBF6EC; border-radius: 999px; padding: 4px 0">Book</span>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 4px">
+        <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px">Atmosphere</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; line-height: 1.5; color: #454036">The spaceflight storyline completely got me. Love in orbit, literally.</span>
+      </div>
+      <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 20px; color: #E6432E; white-space: nowrap">★★★★☆</span>
+    </div>
+
+    <div data-archiverow="true" data-reveal="true" style="display: flex; align-items: center; gap: 20px; padding: 20px 0; border-top: 2px solid #1A1815">
+      <span style="flex-shrink: 0; width: 76px; text-align: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; background: #2E5BE6; color: #FBF6EC; border-radius: 999px; padding: 4px 0">Film</span>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 4px">
+        <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px">Toy Story 5</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; line-height: 1.5; color: #454036">I feel you so much, Bonnie.</span>
+      </div>
+      <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 20px; color: #2E5BE6; white-space: nowrap">★★★★☆</span>
+    </div>
+
+    <div data-archiverow="true" data-reveal="true" style="display: flex; align-items: center; gap: 20px; padding: 20px 0; border-top: 2px solid #1A1815">
+      <span style="flex-shrink: 0; width: 76px; text-align: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; background: #1B9E5E; color: #FBF6EC; border-radius: 999px; padding: 4px 0">Game</span>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 4px">
+        <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px">God of War Ragnarök</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; line-height: 1.5; color: #454036">The first one set the bar sky-high, but the combat is still tier 0.</span>
+      </div>
+      <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 20px; color: #1B9E5E; white-space: nowrap">★★★★☆</span>
+    </div>
+
+    <div data-archiverow="true" data-reveal="true" style="display: flex; align-items: center; gap: 20px; padding: 20px 0; border-top: 2px solid #1A1815; border-bottom: 2px solid #1A1815">
+      <span style="flex-shrink: 0; width: 76px; text-align: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; background: #F5B82E; color: #1A1815; border-radius: 999px; padding: 4px 0">Album</span>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 4px">
+        <span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px">在雨後醒來 — Asen</span>
+        <span style="font-family: 'Space Grotesk', sans-serif; font-size: 14px; line-height: 1.5; color: #454036">Same province, both small-town kids. Chinese hip-hop keeps leveling up.</span>
+      </div>
+      <span style="font-family: 'Caveat', cursive; font-weight: 600; font-size: 20px; color: #C7930F; white-space: nowrap">★★★★★</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const reveal = (el) => el.classList.add('revealed');
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          reveal(e.target);
+          this._io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('[data-reveal]').forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        reveal(el);
+      } else {
+        this._io.observe(el);
+      }
+    });
+  }
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+  }
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
