@@ -170,7 +170,7 @@
 
   <!-- ============ TICKER ============ -->
   <div data-screen-label="Ticker" style="background: #1A1815; color: #FBF6EC; padding: 14px 0; font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 16px; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; overflow: hidden">
-    <div style="display: flex; gap: 40px; width: max-content; animation: tickerScroll 22s linear infinite">
+    <div id="tickerTrack" style="display: flex; gap: 40px; width: max-content; animation: tickerScroll 22s linear infinite">
       <span>Product marketing</span><span style="color: #F5B82E">✳</span>
       <span>Community</span><span style="color: #E6432E">✳</span>
       <span>Climbing</span><span style="color: #2E5BE6">✳</span>
@@ -329,7 +329,7 @@
         Let's make something <span style="font-family: 'Instrument Serif', serif; font-style: italic; color: #F5B82E; white-space: nowrap; display: inline-block">fu<span style="display: inline-block; animation: bob 2.4s ease-in-out infinite">n</span><span style="display: inline-block; opacity: 0.92; font-size: 0.95em; transform: translateY(-2px); animation: bob 2.4s ease-in-out 0.09s infinite">n</span><span style="display: inline-block; opacity: 0.84; font-size: 0.9em; transform: translateY(2px); animation: bob 2.4s ease-in-out 0.18s infinite">n</span><span style="display: inline-block; opacity: 0.74; font-size: 0.85em; transform: translateY(-3px); animation: bob 2.4s ease-in-out 0.27s infinite">n</span><span style="display: inline-block; opacity: 0.64; font-size: 0.8em; transform: translateY(3px); animation: bob 2.4s ease-in-out 0.36s infinite">n</span><span style="display: inline-block; opacity: 0.54; font-size: 0.75em; transform: translateY(-2px); animation: bob 2.4s ease-in-out 0.45s infinite">n</span><span style="display: inline-block; opacity: 0.44; font-size: 0.7em; transform: translateY(2px); animation: bob 2.4s ease-in-out 0.54s infinite">n</span><span style="display: inline-block; opacity: 0.34; font-size: 0.65em; transform: translateY(-3px); animation: bob 2.4s ease-in-out 0.63s infinite">n</span><span style="display: inline-block; opacity: 0.25; font-size: 0.6em; transform: translateY(2px); animation: bob 2.4s ease-in-out 0.72s infinite">n</span><span style="display: inline-block; opacity: 0.17; font-size: 0.55em; transform: translateY(-2px); animation: bob 2.4s ease-in-out 0.81s infinite">n</span><span style="display: inline-block; opacity: 0.1; font-size: 0.5em; transform: translateY(1px); animation: bob 2.4s ease-in-out 0.9s infinite">n</span> <span style="display: inline-block; font-size: 0.55em; transform: rotate(-6deg) translateY(-4px); margin-left: 6px">&lt;3</span></span>
       </div>
       <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap">
-        <a href="mailto:zoey42zhang@gmail.com" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; color: #1A1815; background: #F5B82E; text-decoration: none; padding: 14px 28px; border-radius: 999px" style-hover="background: #FBF6EC">Email me <svg viewBox="0 0 24 18" style="display: inline-block; width: 19px; height: 15px; margin-left: 6px; vertical-align: -1px; overflow: visible; transform: rotate(-4deg)" style-hover="transform: rotate(8deg) translateY(-2px)"><rect x="1.5" y="1.5" width="21" height="15" rx="3" fill="#FBF6EC" stroke="#1A1815" stroke-width="2"></rect><path d="M2.5 3.5 L 12 10.5 L 21.5 3.5" fill="none" stroke="#1A1815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        <a href="/cdn-cgi/l/email-protection#e49e8b819dd0d69e8c858a83a48389858d88ca878b89" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; color: #1A1815; background: #F5B82E; text-decoration: none; padding: 14px 28px; border-radius: 999px" style-hover="background: #FBF6EC">Email me <svg viewBox="0 0 24 18" style="display: inline-block; width: 19px; height: 15px; margin-left: 6px; vertical-align: -1px; overflow: visible; transform: rotate(-4deg)" style-hover="transform: rotate(8deg) translateY(-2px)"><rect x="1.5" y="1.5" width="21" height="15" rx="3" fill="#FBF6EC" stroke="#1A1815" stroke-width="2"></rect><path d="M2.5 3.5 L 12 10.5 L 21.5 3.5" fill="none" stroke="#1A1815" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
         <a href="#contact" style="font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 15px; color: #FBF6EC; text-decoration: none; border: 2px solid rgba(251,246,236,0.4); border-radius: 999px; padding: 9px 18px" style-hover="border-color: #FBF6EC">LinkedIn</a>
         <a href="#contact" style="font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 15px; color: #FBF6EC; text-decoration: none; border: 2px solid rgba(251,246,236,0.4); border-radius: 999px; padding: 9px 18px" style-hover="border-color: #FBF6EC">GitHub</a>
         <a href="#contact" style="font-family: 'Space Grotesk', sans-serif; font-weight: 500; font-size: 15px; color: #FBF6EC; text-decoration: none; border: 2px solid rgba(251,246,236,0.4); border-radius: 999px; padding: 9px 18px" style-hover="border-color: #FBF6EC">Instagram</a>
@@ -348,11 +348,12 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/x-dc" data-dc-script data-props="{
   &quot;showDoodles&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot; }
 }">
 class Component extends DCLogic {
   componentDidMount() {
+    this.setupTicker();
     this.setupChips();
     const reveal = (el) => el.classList.add('revealed');
     this._io = new IntersectionObserver((entries) => {
@@ -374,7 +375,26 @@ class Component extends DCLogic {
   }
   componentWillUnmount() {
     if (this._io) this._io.disconnect();
+    if (this._tickerResize) window.removeEventListener('resize', this._tickerResize);
     if (this._chipRafs) this._chipRafs.forEach((id) => cancelAnimationFrame(id));
+  }
+  setupTicker() {
+    const track = document.getElementById('tickerTrack');
+    if (!track || track.dataset.tickerInit) return;
+    track.dataset.tickerInit = '1';
+    const half = Array.from(track.children).slice(0, track.children.length / 2);
+    const fill = () => {
+      let guard = 0;
+      // content shifts by -50%; the first half must be at least as wide as the screen
+      while (track.scrollWidth < window.innerWidth * 2 + 200 && guard < 30) {
+        half.forEach((n) => track.appendChild(n.cloneNode(true)));
+        half.forEach((n) => track.appendChild(n.cloneNode(true)));
+        guard++;
+      }
+    };
+    fill();
+    this._tickerResize = fill;
+    window.addEventListener('resize', fill);
   }
   setupChips() {
     this._chipRafs = [];
